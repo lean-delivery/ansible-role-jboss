@@ -1,0 +1,32 @@
+---
+galaxy_info:
+  role_name: "ansible-role-jboss"
+  author: "Lean Delivery team <team@lean-delivery.com>"
+  description: "Lean Delivery Jboss install"
+  company: "Epam Systems"
+  license: "Apache"
+  min_ansible_version: "2.5"
+  issue_tracker_url: "https://github.com/lean-delivery/ansible-role-jboss/issues"
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - "xenial"
+        - "trusty"
+    - name: "Debian"
+      versions:
+        - "stretch"
+        - "jessie"
+    - name: "EL"
+      versions:
+        - "6"
+        - "7"
+    - name: "Windows"
+      versions:
+        - "all"
+
+  galaxy_tags:
+    - "development"
+    - "system"
+    - "jboss"
+
+  dependencies: []

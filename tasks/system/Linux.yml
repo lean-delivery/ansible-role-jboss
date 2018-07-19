@@ -1,0 +1,60 @@
+---
+- name: "Load a variable file based on system or distribution"
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_facts.system }}.yml"
+    - "{{ ansible_distribution }}.yml"
+
+- name: "Become section"
+  block:
+    - name: "Install requirements"
+      package:
+        name: "{{ package }}"
+        state: "present"
+      loop: "{{ requirements }}"
+      loop_control:
+        loop_var: package
+
+    - name: Create jboss group
+      group:
+        name: "{{ jboss_group }}"
+        state: present
+
+    - name: "Create jboss user"
+      user:
+        name: "{{ jboss_user }}"
+        group: "{{ jboss_group }}"
+        state: "present"
+        home: "/home/{{ jboss_user }}"
+        append: True
+
+    - name: "Create directory for jboss installation"
+      file:
+        path: "{{ jboss_path }}"
+        state: "directory"
+        owner: "{{ jboss_user }}"
+        group: "{{ jboss_group }}"
+
+    - name: "Install jboss"
+      become_user: "{{ jboss_user }}"
+      unarchive:
+        src: "{{ jboss_artifact }}"
+        dest: "{{ jboss_path }}"
+        mode: "0755"
+        list_files: True
+      register: jboss_release
+
+  become: True
+
+- name: "Set jboss_home variable"
+  set_fact:
+    jboss_home: "{{ jboss_path }}/{{ jboss_release.files[0] }}"
+
+- name: "Put jboss profile"
+  template:
+    src: "jboss.sh.j2"
+    dest: "/etc/profile.d/jboss.sh"
+    owner: "root"
+    group: "root"
+    mode: "0555"
+  become: True

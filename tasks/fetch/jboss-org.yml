@@ -1,0 +1,15 @@
+---
+- name: "Download artifact from jboss.org"
+  get_url:
+    url: "{{ org_jboss_artifacts[jboss_major_version][jboss_minor_version][jboss_patch_version] }}"
+    dest: "{{ download_path }}"
+  until: "'OK' in FILE_DOWNLOADED.msg"
+  retries: 3
+  delay: 2
+  register: FILE_DOWNLOADED
+  delegate_to: "localhost"
+  connection: "local"
+
+- name: "Downloaded artifact"
+  set_fact:
+    jboss_artifact: "{{ FILE_DOWNLOADED.dest }}"
