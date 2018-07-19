@@ -3,7 +3,7 @@ ansible-role-jboss
 
 ## Summary
 
-This role installs JBoss Application on Linux and Windows platforms
+This role installs JBoss Application on Linux and Windows platforms  
 Current JBoss role can be installed to OS Linux 6.* and 7.*. 
 
 
