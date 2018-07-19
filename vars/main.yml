@@ -1,0 +1,15 @@
+---
+# vars file for jboss
+
+org_jboss_artifacts:
+  7:
+    1:
+      1: "http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip"
+      0: "http://download.jboss.org/jbossas/7.1/jboss-as-7.1.0.Final/jboss-as-7.1.0.Final.zip"
+    0:
+      2: "http://download.jboss.org/jbossas/7.0/jboss-as-7.0.2.Final/jboss-as-7.0.2.Final.zip"
+      1: "http://download.jboss.org/jbossas/7.0/jboss-as-7.0.1.Final/jboss-as-7.0.1.Final.zip"
+      0: "http://download.jboss.org/jbossas/7.0/jboss-as-7.0.0.Final/jboss-as-7.0.0.Final.zip"
+  6:
+    1:
+      0: "http://download.jboss.org/jbossas/6.1/jboss-as-distribution-6.1.0.Final.zip"

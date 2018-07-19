@@ -1,0 +1,25 @@
+---
+# set version only for jboss-org transport
+# version of jboss, e.g. 7.1.1
+jboss_major_version: 7
+jboss_minor_version: 1
+jboss_patch_version: 1
+
+# Custom artifact source transport
+transport: "jboss-org"
+# available are:
+# - "jboss-org" Downloading artifact from http://download.jboss.org
+# - "web" Fetching artifact from custom web uri
+# - "local" Local artifact
+# path to extract jboss
+
+transport_web: "http://my-storage.example.com/jboss-as-7.1.1.Final.zip"
+transport_local: "/tmp/jboss-as-7.1.1.Final.zip"
+
+jboss_path: "/opt/jboss"
+
+jboss_user: "jboss"
+jboss_group: "jboss"
+
+# path to download jboss
+download_path: "/tmp"

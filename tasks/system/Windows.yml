@@ -1,0 +1,10 @@
+---
+- name: "Create directory for jboss installation"
+  win_file:
+    path: "{{ jboss_path }}"
+    state: "directory"
+
+- name: "Install jboss"
+  win_unzip:
+    src: "{{ jboss_artifact }}"
+    dest: "{{ jboss_path }}"
