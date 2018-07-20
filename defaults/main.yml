@@ -11,11 +11,11 @@ transport: "jboss-org"
 # - "jboss-org" Downloading artifact from http://download.jboss.org
 # - "web" Fetching artifact from custom web uri
 # - "local" Local artifact
-# path to extract jboss
 
 transport_web: "http://my-storage.example.com/jboss-as-7.1.1.Final.zip"
 transport_local: "/tmp/jboss-as-7.1.1.Final.zip"
 
+# path to extract jboss
 jboss_path: "/opt/jboss"
 
 jboss_user: "jboss"
