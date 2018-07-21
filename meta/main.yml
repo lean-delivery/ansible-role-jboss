@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: "ansible-role-jboss"
+  role_name: "jboss"
   author: "Lean Delivery team <team@lean-delivery.com>"
   description: "Lean Delivery Jboss install"
   company: "Epam Systems"
