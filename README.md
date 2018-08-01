@@ -67,7 +67,7 @@ Example Playbook
   hosts: all
 
   roles:
-    - role: "lean-delivery.ansible-role-jboss"
+    - role: "lean_delivery.jboss"
       jboss_major_version: 7
       jboss_minor_version: 1
       jboss_patch_version: 1
@@ -79,7 +79,7 @@ Example Playbook
   hosts: all
 
   roles:
-    - role: "lean-delivery.ansible-role-jboss"
+    - role: "lean_delivery.jboss"
       transport: "local"
       transport_local: "/tmp/jboss-as-7.1.1.Final.zip"
 ```
