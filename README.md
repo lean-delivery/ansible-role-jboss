@@ -1,4 +1,4 @@
-ansible-role-jboss
+Ansible Galaxy lean_delivery.jboss role
 =========
 [![License](https://img.shields.io/badge/license-Apache-green.svg?style=flat)](https://raw.githubusercontent.com/lean-delivery/ansible-role-jboss/master/LICENSE)
 [![Build Status](https://travis-ci.org/lean-delivery/ansible-role-jboss.svg?branch=master)](https://travis-ci.org/lean-delivery/ansible-role-jboss)
@@ -67,7 +67,7 @@ Example Playbook
   hosts: all
 
   roles:
-    - role: "lean-delivery.ansible-role-jboss"
+    - role: "lean_delivery.jboss"
       jboss_major_version: 7
       jboss_minor_version: 1
       jboss_patch_version: 1
@@ -79,7 +79,7 @@ Example Playbook
   hosts: all
 
   roles:
-    - role: "lean-delivery.ansible-role-jboss"
+    - role: "lean_delivery.jboss"
       transport: "local"
       transport_local: "/tmp/jboss-as-7.1.1.Final.zip"
 ```
